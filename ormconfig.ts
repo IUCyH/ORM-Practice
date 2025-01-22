@@ -1,4 +1,5 @@
 import { DataSource } from "typeorm";
+import { SnakeNamingStrategy } from "typeorm-naming-strategies";
 
 export const AppDataSource = new DataSource({
     type: "mariadb",
@@ -9,6 +10,7 @@ export const AppDataSource = new DataSource({
     database: "orm_practice",
     synchronize: false,
     logging: true,
+    namingStrategy: new SnakeNamingStrategy(),
     extra: {
         timezone: "Asia/Seoul",
         dateStrings: true
