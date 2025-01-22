@@ -5,6 +5,15 @@ export default class UserService {
 
     async getUser(id: number) {
         const user = await this.repository.getUser(id);
-        return user;
+
+        if(user != null) {
+            const result = {
+                ...user,
+                links: user.links.map(link => link.link)
+            };
+            return result;
+        }
+
+        return null;
     }
 }

@@ -8,7 +8,6 @@ export default class UserRepository {
         const builder = this.entityManager.createQueryBuilder(User, "user");
         const query = builder
             .leftJoinAndSelect("user.links", "links")
-            .addSelect("links.link")
             .where("user.id = :id", { id: id });
 
         const result = await query.getOne();
