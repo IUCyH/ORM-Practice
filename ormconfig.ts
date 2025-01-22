@@ -1,5 +1,7 @@
 import { DataSource } from "typeorm";
 
+console.log(__dirname);
+
 export const AppDataSource = new DataSource({
     type: "mariadb",
     host: "localhost",
@@ -13,7 +15,7 @@ export const AppDataSource = new DataSource({
         timezone: "Asia/Seoul",
         dateStrings: true
     },
-    entities: [__dirname + "/../entities/**/*.js"],
+    entities: [__dirname + "/entities/**/*.{js,ts}"],
     subscribers: [],
     migrations: []
 });
