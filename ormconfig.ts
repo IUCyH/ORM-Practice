@@ -1,5 +1,4 @@
 import { DataSource } from "typeorm";
-import { CustomStrategy } from "./custromStrategy";
 
 export const AppDataSource = new DataSource({
     type: "mariadb",
@@ -14,7 +13,7 @@ export const AppDataSource = new DataSource({
         timezone: "Asia/Seoul",
         dateStrings: true
     },
-    entities: ["./entities/**/*.ts"],
+    entities: ["./entities/**/*.js"],
     subscribers: [],
     migrations: []
 });
