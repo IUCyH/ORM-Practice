@@ -2,24 +2,9 @@ import {
     Entity,
     Column,
     PrimaryGeneratedColumn,
-    PrimaryColumn,
-    ManyToOne,
     OneToMany
 } from "typeorm";
-
-@Entity()
-export class UserLink {
-    @PrimaryColumn("int")
-    userId: number = 0;
-
-    @PrimaryColumn("varchar", { length: 128 })
-    link: string = "";
-
-    @ManyToOne(() => User, user => user.links, {
-        cascade: true
-    })
-    user!: User;
-}
+import { UserLink } from "./userLink";
 
 @Entity()
 export class User {
