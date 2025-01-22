@@ -4,9 +4,9 @@ import {
     PrimaryGeneratedColumn
 } from "typeorm";
 
-@Entity()
+@Entity("user")
 export class User {
-    @PrimaryGeneratedColumn()
+    @PrimaryGeneratedColumn("increment")
     id: number = 0;
 
     @Column("string", { length: 128 })
