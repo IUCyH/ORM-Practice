@@ -9,9 +9,9 @@ export class User {
     @PrimaryGeneratedColumn()
     id: number = 0;
 
-    @Column("string", { length: 128 })
+    @Column("varchar", { length: 128 })
     name: string = "";
 
-    @Column("string", { length: 128 })
+    @Column("varchar", { length: 128 })
     email: string = "";
 }
