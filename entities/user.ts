@@ -18,5 +18,5 @@ export class User {
     email: string = "";
 
     @OneToMany(() => UserLink, userLink => userLink.user)
-    links: UserLink[] = [];
+    links!: UserLink[];
 }
