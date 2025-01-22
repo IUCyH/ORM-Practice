@@ -1,5 +1,6 @@
 import "reflect-metadata";
 import express from "express";
+import { AppDataSource } from "./ormconfig";
 import userRouter from "./features/userRouter";
 
 const app = express();
@@ -10,6 +11,7 @@ app.use("/users", userRouter);
 
 const PORT = 8080;
 const HOST = "0.0.0.0";
-app.listen(PORT, HOST, () => {
+app.listen(PORT, HOST, async () => {
   console.log(`Server running at ${HOST}:${PORT}`);
+  await AppDataSource.initialize();
 });
