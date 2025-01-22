@@ -10,7 +10,6 @@ export const AppDataSource = new DataSource({
     database: "orm_practice",
     synchronize: false,
     logging: true,
-    namingStrategy: new CustomStrategy(),
     extra: {
         timezone: "Asia/Seoul",
         dateStrings: true
