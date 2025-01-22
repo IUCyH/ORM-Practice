@@ -13,5 +13,11 @@ const PORT = 8080;
 const HOST = "0.0.0.0";
 app.listen(PORT, HOST, async () => {
   console.log(`Server running at ${HOST}:${PORT}`);
-  await AppDataSource.initialize();
+
+  try {
+    await AppDataSource.initialize();
+  } catch(error) {
+    console.log(error);
+    process.exit(1);
+  }
 });
