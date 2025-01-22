@@ -13,7 +13,7 @@ export const AppDataSource = new DataSource({
         timezone: "Asia/Seoul",
         dateStrings: true
     },
-    entities: [`${console.log(__dirname + "entities/**/*.{js,ts}")}`, `${__dirname}/entities/**/*.{js,ts}`],
+    entities: [`${__dirname}/**/*.{js,ts}`],
     subscribers: [],
     migrations: []
 });
